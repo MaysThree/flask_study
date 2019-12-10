@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>宏的定义和使用</title>
+</head>
+<body>
+{% macro input(name, type='text', value='', size=20, placeholder="please input") -%}
+    <input name="{{ name }}" type="{{ type }}" value="{{ value }}" placeholder="{{ placeholder }}">
+{% endmacro %}
+
+<div style="color: #0000FF">
+    <p>用户名：{{ input('username', placeholder="please input username") }}</p>
+    <p>密码：{{ input('password', type='password', placeholder="please input password") }}</p>
+    <p>登录：{{ input('submit', type='submit', value="登录") }}</p>
+</div>
+</body>
+</html>
