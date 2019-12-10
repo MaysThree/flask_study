@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<hr>
+{% set tel = '123456789' %}
+{% set nav = [('index.html', 'index'), ('product.html', 'product')] %}
+{{ tel }}<br>
+{{ nav }}<br>
+{% with pass=60 %}
+    {{ pass }}
+{% endwith %}
+</body>
+</html>
