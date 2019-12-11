@@ -12,12 +12,12 @@ def hello_world():
     return render_template('index.html', book=book)
 
 
-@app.route('/test1')
+@app.route('/test1/')
 def test1():
     render_template('test1.html')
 
 
-@app.route('/test2')
+@app.route('/test2/')
 def test2():
     render_template('test2.html')
 
