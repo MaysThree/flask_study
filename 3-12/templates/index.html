@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>静态文件加载</title>
+    <script src="{{ url_for('static', filename='js/jquery-3.3.1/jquery-3.3.1.js') }}"></script>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/car.css') }}">
+</head>
+<body>
+<script>
+    if (jQuery){
+        alert('加载');
+    }
+    else {
+        alert('未加载');
+    }
+</script>
+<div class="img">
+    <img src="{{ url_for('static', filename='images/suolong.jpg') }}">
+</div>
+</body>
+</html>
