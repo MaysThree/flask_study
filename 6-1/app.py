@@ -10,13 +10,25 @@ conn = pymysql.connect(host='127.0.0.1',
                        db='demo_01',
                        charset='utf8')
 cursor = conn.cursor()
-sql = 'select * from user'
-cursor.execute(sql)
+
+try:
+    sql_insert1 = "insert into user(username, email) values ('hzy', '123456@163.com')"
+    sql_insert2 = "insert into user(username, email) values ('maysthree', '654321@163.com')"
+    cursor.execute(sql_insert1)
+    cursor.execute(sql_insert2)
+    conn.commit()
+except Exception as e:
+    print(e)
+    conn.rollback()
+
+sql_select = 'select * from user'
+cursor.execute(sql_select)
 results = cursor.fetchall()
 for row in results:
     username = row[0]
     email = row[1]
     print(username, email)
+
 cursor.close()
 conn.close()
 
