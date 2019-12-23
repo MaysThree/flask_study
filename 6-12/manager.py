@@ -6,6 +6,7 @@ manager = Manager(app)
 
 @manager.command
 def hello():
+    '''hello'''
     print('Hello World')
 
 
